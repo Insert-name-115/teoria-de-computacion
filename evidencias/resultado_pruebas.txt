@@ -1,0 +1,332 @@
+﻿Ejecución de pruebas automatizadas
+Comando: python -m unittest discover -s tests
+Commit: 52c8cbc
+Fecha: 2026-10-11 16:16:26
+
+TOKENS
+<ATOMO, 'padre', 2, 1, atributo=0>
+<PARENTESIS_IZQ, '(', 2, 6>
+<ATOMO, 'juan', 2, 7, atributo=1>
+<COMA, ',', 2, 11>
+<ATOMO, 'ana', 2, 13, atributo=2>
+<PARENTESIS_DER, ')', 2, 16>
+<PUNTO, '.', 2, 17>
+<ATOMO, 'edad', 3, 1, atributo=3>
+<PARENTESIS_IZQ, '(', 3, 5>
+<ATOMO, 'ana', 3, 6, atributo=2>
+<COMA, ',', 3, 9>
+<PARENTESIS_DER, ')', 3, 17>
+<PUNTO, '.', 3, 18>
+<ATOMO, 'nombre', 4, 1, atributo=4>
+<PARENTESIS_IZQ, '(', 4, 7>
+<VARIABLE, 'X', 4, 8, atributo=5>
+<PARENTESIS_DER, ')', 4, 9>
+<OP_REGLA, ':-', 4, 11>
+<VARIABLE, 'X', 4, 14, atributo=5>
+<OP_UNIFICA, '=', 4, 16>
+<ATOMO, 'saludo', 5, 1, atributo=6>
+<PARENTESIS_IZQ, '(', 5, 7>
+<ATOMO, 'precio', 6, 1, atributo=7>
+<PARENTESIS_IZQ, '(', 6, 7>
+<VARIABLE, 'P', 6, 8, atributo=8>
+<PARENTESIS_DER, ')', 6, 9>
+<OP_REGLA, ':-', 6, 11>
+<VARIABLE, 'P', 6, 14, atributo=8>
+<OP_UNIFICA, '=', 6, 16>
+<COMA, ',', 6, 20>
+<ATOMO, 'valido', 6, 22, atributo=9>
+<PARENTESIS_IZQ, '(', 6, 28>
+<VARIABLE, 'P', 6, 29, atributo=8>
+<PARENTESIS_DER, ')', 6, 30>
+<PUNTO, '.', 6, 31>
+<ATOMO, 'total', 7, 1, atributo=10>
+<PARENTESIS_IZQ, '(', 7, 6>
+<VARIABLE, 'T', 7, 7, atributo=11>
+<PARENTESIS_DER, ')', 7, 8>
+<OP_REGLA, ':-', 7, 10>
+<VARIABLE, 'T', 7, 13, atributo=11>
+<OP_UNIFICA, '=', 7, 15>
+<COMA, ',', 7, 23>
+<ATOMO, 'listo', 7, 25, atributo=12>
+<PARENTESIS_IZQ, '(', 7, 30>
+<VARIABLE, 'T', 7, 31, atributo=11>
+<PARENTESIS_DER, ')', 7, 32>
+<PUNTO, '.', 7, 33>
+<ATOMO, 'cuenta', 8, 1, atributo=13>
+<PARENTESIS_IZQ, '(', 8, 7>
+<VARIABLE, 'N', 8, 8, atributo=14>
+<PARENTESIS_DER, ')', 8, 9>
+<OP_REGLA, ':-', 8, 11>
+<VARIABLE, 'N', 8, 14, atributo=14>
+<ENTERO, '3', 8, 18, atributo=3>
+<COMA, ',', 8, 19>
+<ATOMO, 'ok', 8, 21, atributo=15>
+<PARENTESIS_IZQ, '(', 8, 23>
+<VARIABLE, 'N', 8, 24, atributo=14>
+<PARENTESIS_DER, ')', 8, 25>
+<PUNTO, '.', 8, 26>
+<ATOMO, 'resta', 9, 1, atributo=16>
+<PARENTESIS_IZQ, '(', 9, 6>
+<VARIABLE, 'A', 9, 7, atributo=17>
+<COMA, ',', 9, 8>
+<VARIABLE, 'B', 9, 10, atributo=18>
+<PARENTESIS_DER, ')', 9, 11>
+<OP_REGLA, ':-', 9, 13>
+<VARIABLE, 'A', 9, 16, atributo=17>
+<VARIABLE, 'B', 9, 20, atributo=18>
+<COMA, ',', 9, 21>
+<ATOMO, 'fin', 9, 23, atributo=19>
+<PARENTESIS_IZQ, '(', 9, 26>
+<VARIABLE, 'B', 9, 27, atributo=18>
+<PARENTESIS_DER, ')', 9, 28>
+<PUNTO, '.', 9, 29>
+
+ERRORES
+<NUMERO_MAL_FORMADO, linea=3, columna=11, fragmento='123abc': Numero mal formado; se descarta el fragmento numerico completo.>
+<ATOMO_SIN_CIERRE, linea=4, columna=18, fragmento="'Juan Perez.": Atomo entre comillas simples sin cierre; se descarta hasta el final de la linea.>
+<CADENA_SIN_CIERRE, linea=5, columna=8, fragmento='"hola mundo).': Cadena entre comillas dobles sin cierre; se descarta hasta el final de la linea.>
+<NUMERO_MAL_FORMADO, linea=6, columna=18, fragmento='.5': Numero mal formado; se descarta el fragmento numerico completo.>
+<NUMERO_MAL_FORMADO, linea=7, columna=17, fragmento='12.3.4': Numero mal formado; se descarta el fragmento numerico completo.>
+<CARACTER_NO_ADMITIDO, linea=8, columna=16, fragmento='@': El caracter no pertenece al subconjunto lexico definido.>
+<CARACTER_NO_ADMITIDO, linea=9, columna=18, fragmento='#': El caracter no pertenece al subconjunto lexico definido.>
+<COMENTARIO_BLOQUE_SIN_CIERRE, linea=10, columna=1, fragmento='/* comentario que nunca se cierra': Comentario de bloque sin cierre; se descarta hasta el final del archivo.>
+
+TABLA DE LEXEMAS
+0: ATOMO 'padre'
+1: ATOMO 'juan'
+2: ATOMO 'ana'
+3: ATOMO 'edad'
+4: ATOMO 'nombre'
+5: VARIABLE 'X'
+6: ATOMO 'saludo'
+7: ATOMO 'precio'
+8: VARIABLE 'P'
+9: ATOMO 'valido'
+10: ATOMO 'total'
+11: VARIABLE 'T'
+12: ATOMO 'listo'
+13: ATOMO 'cuenta'
+14: VARIABLE 'N'
+15: ATOMO 'ok'
+16: ATOMO 'resta'
+17: VARIABLE 'A'
+18: VARIABLE 'B'
+19: ATOMO 'fin'
+....................................................................................
+----------------------------------------------------------------------
+Ran 84 tests in 1.007s
+System.Management.Automation.RemoteException
+OK
+TOKENS
+<ATOMO, 'padre', 2, 1, atributo=0>
+<PARENTESIS_IZQ, '(', 2, 6>
+<ATOMO, 'juan', 2, 7, atributo=1>
+<COMA, ',', 2, 11>
+<ATOMO, 'ana', 2, 13, atributo=2>
+<PARENTESIS_DER, ')', 2, 16>
+<PUNTO, '.', 2, 17>
+<ATOMO, 'padre', 3, 1, atributo=0>
+<PARENTESIS_IZQ, '(', 3, 6>
+<ATOMO, 'juan', 3, 7, atributo=1>
+<COMA, ',', 3, 11>
+<ATOMO, 'pedro', 3, 13, atributo=3>
+<PARENTESIS_DER, ')', 3, 18>
+<PUNTO, '.', 3, 19>
+<ATOMO, 'abuelo', 6, 1, atributo=4>
+<PARENTESIS_IZQ, '(', 6, 7>
+<VARIABLE, 'X', 6, 8, atributo=5>
+<COMA, ',', 6, 9>
+<VARIABLE, 'Z', 6, 11, atributo=6>
+<PARENTESIS_DER, ')', 6, 12>
+<OP_REGLA, ':-', 6, 14>
+<ATOMO, 'padre', 7, 5, atributo=0>
+<PARENTESIS_IZQ, '(', 7, 10>
+<VARIABLE, 'X', 7, 11, atributo=5>
+<COMA, ',', 7, 12>
+<VARIABLE, 'Y', 7, 14, atributo=7>
+<PARENTESIS_DER, ')', 7, 15>
+<COMA, ',', 7, 16>
+<ATOMO, 'padre', 8, 5, atributo=0>
+<PARENTESIS_IZQ, '(', 8, 10>
+<VARIABLE, 'Y', 8, 11, atributo=7>
+<COMA, ',', 8, 12>
+<VARIABLE, 'Z', 8, 14, atributo=6>
+<PARENTESIS_DER, ')', 8, 15>
+<PUNTO, '.', 8, 16>
+<OP_CONSULTA, '?-', 10, 1>
+<ATOMO, 'abuelo', 10, 4, atributo=4>
+<PARENTESIS_IZQ, '(', 10, 10>
+<ATOMO, 'juan', 10, 11, atributo=1>
+<COMA, ',', 10, 15>
+<VARIABLE, 'Quien', 10, 17, atributo=8>
+<PARENTESIS_DER, ')', 10, 22>
+<PUNTO, '.', 10, 23>
+<ATOMO, 'datos', 12, 1, atributo=9>
+<PARENTESIS_IZQ, '(', 12, 6>
+<ATOMO_COMILLAS, "'Juan Perez'", 12, 7, atributo=10>
+<COMA, ',', 12, 19>
+<CADENA, '"cadena con espacios"', 12, 21, atributo=11>
+<COMA, ',', 12, 42>
+<ENTERO, '25', 12, 44, atributo=25>
+<COMA, ',', 12, 46>
+<REAL, '3.14', 12, 48, atributo=3.14>
+<COMA, ',', 12, 52>
+<VARIABLE, '_Temporal', 12, 54, atributo=12>
+<COMA, ',', 12, 63>
+<VARIABLE_ANONIMA, '_', 12, 65>
+<PARENTESIS_DER, ')', 12, 66>
+<PUNTO, '.', 12, 67>
+<ATOMO, 'calculo', 13, 1, atributo=13>
+<PARENTESIS_IZQ, '(', 13, 8>
+<VARIABLE, 'Resultado', 13, 9, atributo=14>
+<PARENTESIS_DER, ')', 13, 18>
+<OP_REGLA, ':-', 13, 20>
+<VARIABLE, 'Resultado', 13, 23, atributo=14>
+<OP_IS, 'is', 13, 33>
+<ENTERO, '10', 13, 36, atributo=10>
+<OP_SUMA, '+', 13, 39>
+<ENTERO, '2', 13, 41, atributo=2>
+<OP_MULT, '*', 13, 43>
+<ENTERO, '3', 13, 45, atributo=3>
+<OP_RESTA, '-', 13, 47>
+<ENTERO, '4', 13, 49, atributo=4>
+<OP_DIV, '/', 13, 51>
+<ENTERO, '2', 13, 53, atributo=2>
+<OP_DIV_ENTERA, '//', 13, 55>
+<ENTERO, '1', 13, 58, atributo=1>
+<OP_POTENCIA, '**', 13, 60>
+<ENTERO, '2', 13, 63, atributo=2>
+<OP_MOD, 'mod', 13, 65>
+<ENTERO, '3', 13, 69, atributo=3>
+<PUNTO, '.', 13, 70>
+<ATOMO, 'comparar', 14, 1, atributo=15>
+<PARENTESIS_IZQ, '(', 14, 9>
+<VARIABLE, 'X', 14, 10, atributo=5>
+<COMA, ',', 14, 11>
+<VARIABLE, 'Y', 14, 13, atributo=7>
+<PARENTESIS_DER, ')', 14, 14>
+<OP_REGLA, ':-', 14, 16>
+<VARIABLE, 'X', 14, 19, atributo=5>
+<OP_UNIFICA, '=', 14, 21>
+<VARIABLE, 'Y', 14, 23, atributo=7>
+<PUNTO_Y_COMA, ';', 14, 24>
+<VARIABLE, 'X', 14, 26, atributo=5>
+<OP_NO_UNIFICA, '\\=', 14, 28>
+<VARIABLE, 'Y', 14, 31, atributo=7>
+<COMA, ',', 14, 32>
+<VARIABLE, 'X', 14, 34, atributo=5>
+<OP_IDENTICO, '==', 14, 36>
+<VARIABLE, 'X', 14, 39, atributo=5>
+<COMA, ',', 14, 40>
+<VARIABLE, 'X', 14, 42, atributo=5>
+<OP_NO_IDENTICO, '\\==', 14, 44>
+<VARIABLE, 'Y', 14, 48, atributo=7>
+<COMA, ',', 14, 49>
+<VARIABLE, 'X', 14, 51, atributo=5>
+<OP_UNIV, '=..', 14, 53>
+<CORCHETE_IZQ, '[', 14, 57>
+<ATOMO, 'dato', 14, 58, atributo=16>
+<COMA, ',', 14, 62>
+<VARIABLE, 'X', 14, 64, atributo=5>
+<CORCHETE_DER, ']', 14, 65>
+<PUNTO, '.', 14, 66>
+<ATOMO, 'orden', 15, 1, atributo=17>
+<PARENTESIS_IZQ, '(', 15, 6>
+<VARIABLE, 'X', 15, 7, atributo=5>
+<COMA, ',', 15, 8>
+<VARIABLE, 'Y', 15, 10, atributo=7>
+<PARENTESIS_DER, ')', 15, 11>
+<OP_REGLA, ':-', 15, 13>
+<VARIABLE, 'X', 15, 16, atributo=5>
+<OP_MENOR, '<', 15, 18>
+<VARIABLE, 'Y', 15, 20, atributo=7>
+<COMA, ',', 15, 21>
+<VARIABLE, 'X', 15, 23, atributo=5>
+<OP_MENOR_IGUAL, '=<', 15, 25>
+<VARIABLE, 'Y', 15, 28, atributo=7>
+<COMA, ',', 15, 29>
+<VARIABLE, 'Y', 15, 31, atributo=7>
+<OP_MAYOR, '>', 15, 33>
+<VARIABLE, 'X', 15, 35, atributo=5>
+<COMA, ',', 15, 36>
+<VARIABLE, 'Y', 15, 38, atributo=7>
+<OP_MAYOR_IGUAL, '>=', 15, 40>
+<VARIABLE, 'X', 15, 43, atributo=5>
+<PUNTO, '.', 15, 44>
+<ATOMO, 'control', 16, 1, atributo=18>
+<PARENTESIS_IZQ, '(', 16, 8>
+<VARIABLE, 'X', 16, 9, atributo=5>
+<PARENTESIS_DER, ')', 16, 10>
+<OP_REGLA, ':-', 16, 12>
+<OP_NEGACION, '\\+', 16, 15>
+<ATOMO, 'falso', 16, 18, atributo=19>
+<PARENTESIS_IZQ, '(', 16, 23>
+<VARIABLE, 'X', 16, 24, atributo=5>
+<PARENTESIS_DER, ')', 16, 25>
+<COMA, ',', 16, 26>
+<CORTE, '!', 16, 28>
+<PUNTO, '.', 16, 29>
+<ATOMO, 'lista', 17, 1, atributo=20>
+<PARENTESIS_IZQ, '(', 17, 6>
+<CORCHETE_IZQ, '[', 17, 7>
+<ATOMO, 'a', 17, 8, atributo=21>
+<COMA, ',', 17, 9>
+<ATOMO, 'b', 17, 11, atributo=22>
+<BARRA, '|', 17, 13>
+<VARIABLE, 'Resto', 17, 15, atributo=23>
+<CORCHETE_DER, ']', 17, 20>
+<PARENTESIS_DER, ')', 17, 21>
+<OP_REGLA, ':-', 17, 23>
+<VARIABLE, 'Resto', 17, 26, atributo=23>
+<OP_UNIFICA, '=', 17, 32>
+<CORCHETE_IZQ, '[', 17, 34>
+<ATOMO, 'c', 17, 35, atributo=24>
+<CORCHETE_DER, ']', 17, 36>
+<PUNTO, '.', 17, 37>
+<ATOMO, 'estructura', 18, 1, atributo=25>
+<PARENTESIS_IZQ, '(', 18, 11>
+<LLAVE_IZQ, '{', 18, 12>
+<ATOMO, 'dato', 18, 13, atributo=16>
+<LLAVE_DER, '}', 18, 17>
+<PARENTESIS_DER, ')', 18, 18>
+<PUNTO, '.', 18, 19>
+<ATOMO, 'regla', 19, 1, atributo=26>
+<OP_DCG, '-->', 19, 7>
+<CORCHETE_IZQ, '[', 19, 11>
+<ATOMO, 'a', 19, 12, atributo=21>
+<COMA, ',', 19, 13>
+<ATOMO, 'b', 19, 15, atributo=22>
+<CORCHETE_DER, ']', 19, 16>
+<PUNTO, '.', 19, 17>
+
+ERRORES
+(sin errores)
+
+TABLA DE LEXEMAS
+0: ATOMO 'padre'
+1: ATOMO 'juan'
+2: ATOMO 'ana'
+3: ATOMO 'pedro'
+4: ATOMO 'abuelo'
+5: VARIABLE 'X'
+6: VARIABLE 'Z'
+7: VARIABLE 'Y'
+8: VARIABLE 'Quien'
+9: ATOMO 'datos'
+10: ATOMO_COMILLAS "'Juan Perez'"
+11: CADENA '"cadena con espacios"'
+12: VARIABLE '_Temporal'
+13: ATOMO 'calculo'
+14: VARIABLE 'Resultado'
+15: ATOMO 'comparar'
+16: ATOMO 'dato'
+17: ATOMO 'orden'
+18: ATOMO 'control'
+19: ATOMO 'falso'
+20: ATOMO 'lista'
+21: ATOMO 'a'
+22: ATOMO 'b'
+23: VARIABLE 'Resto'
+24: ATOMO 'c'
+25: ATOMO 'estructura'
+26: ATOMO 'regla'
