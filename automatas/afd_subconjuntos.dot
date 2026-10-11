@@ -1,0 +1,17 @@
+digraph AFD_SUBCONJUNTOS {
+	rankdir=LR
+	"" [shape=point]
+	A0 [shape=circle]
+	A1 [label="A1\nATOMO" shape=doublecircle]
+	A2 [label="A2\nVARIABLE" shape=doublecircle]
+	A3 [label="A3\nVARIABLE_ANONIMA" shape=doublecircle]
+	A4 [label="A4\nVARIABLE" shape=doublecircle]
+	"" -> A0
+	A0 -> A1 [label=minuscula]
+	A0 -> A2 [label=mayuscula]
+	A0 -> A3 [label=guion_bajo]
+	A1 -> A1 [label="digito, guion_bajo, mayuscula, minuscula"]
+	A2 -> A2 [label="digito, guion_bajo, mayuscula, minuscula"]
+	A3 -> A4 [label="digito, guion_bajo, mayuscula, minuscula"]
+	A4 -> A4 [label="digito, guion_bajo, mayuscula, minuscula"]
+}

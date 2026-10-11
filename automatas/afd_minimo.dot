@@ -1,0 +1,15 @@
+digraph AFD_MINIMO {
+	rankdir=LR
+	"" [shape=point]
+	M0 [shape=circle]
+	M1 [label="M1\nATOMO" shape=doublecircle]
+	M2 [label="M2\nVARIABLE" shape=doublecircle]
+	M3 [label="M3\nVARIABLE_ANONIMA" shape=doublecircle]
+	"" -> M0
+	M0 -> M1 [label=minuscula]
+	M0 -> M2 [label=mayuscula]
+	M0 -> M3 [label=guion_bajo]
+	M1 -> M1 [label="digito, guion_bajo, mayuscula, minuscula"]
+	M2 -> M2 [label="digito, guion_bajo, mayuscula, minuscula"]
+	M3 -> M2 [label="digito, guion_bajo, mayuscula, minuscula"]
+}

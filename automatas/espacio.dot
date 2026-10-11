@@ -1,0 +1,9 @@
+digraph ESPACIO {
+	rankdir=LR
+	"" [shape=point]
+	Espacio [label="Espacio\nESPACIO" shape=doublecircle]
+	Inicio [shape=circle]
+	"" -> Inicio
+	Inicio -> Espacio [label="espacio, salto"]
+	Espacio -> Espacio [label="espacio, salto"]
+}

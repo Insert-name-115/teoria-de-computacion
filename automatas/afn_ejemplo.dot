@@ -1,0 +1,27 @@
+digraph AFN {
+	rankdir=LR
+	"" [shape=point]
+	q0 [shape=circle]
+	q1 [shape=circle]
+	q2 [label="q2\nATOMO" shape=doublecircle]
+	q3 [shape=circle]
+	q4 [label="q4\nVARIABLE_ANONIMA" shape=doublecircle]
+	q5 [shape=circle]
+	q6 [shape=circle]
+	q7 [label="q7\nVARIABLE" shape=doublecircle]
+	q8 [shape=circle]
+	q9 [label="q9\nVARIABLE" shape=doublecircle]
+	"" -> q0
+	q0 -> q1 [label="ε"]
+	q0 -> q3 [label="ε"]
+	q0 -> q5 [label="ε"]
+	q0 -> q8 [label="ε"]
+	q1 -> q2 [label=minuscula]
+	q3 -> q4 [label=guion_bajo]
+	q5 -> q6 [label=guion_bajo]
+	q8 -> q9 [label=mayuscula]
+	q2 -> q2 [label="digito, guion_bajo, mayuscula, minuscula"]
+	q6 -> q7 [label="digito, guion_bajo, mayuscula, minuscula"]
+	q7 -> q7 [label="digito, guion_bajo, mayuscula, minuscula"]
+	q9 -> q9 [label="digito, guion_bajo, mayuscula, minuscula"]
+}
