@@ -111,6 +111,15 @@ def _diagnosticar(texto, posicion, tipo, lexema):
             return CADENA_SIN_CIERRE, _fin_de_linea(texto, posicion) - posicion
         return CARACTER_NO_ADMITIDO, 1
 
+    # Texto entre comillas cerrado y seguido de la misma comilla: dentro de un texto
+    # '' o "" es una comilla escapada, asi que el texto seguia y nunca se cerro
+    # ("a""b o 'a''b). Se informa una sola vez, hasta el final de la linea.
+    if tipo in ("ATOMO_COMILLAS", "CADENA"):
+        fin = posicion + len(lexema)
+        if fin < len(texto) and texto[fin] == lexema[0]:
+            tipo_error = ATOMO_SIN_CIERRE if lexema[0] == "'" else CADENA_SIN_CIERRE
+            return tipo_error, _fin_de_linea(texto, posicion) - posicion
+
     # Numero valido seguido de letra, _ o de otro .digito (25abc, 2a, 12.3.4)
     if tipo in ("ENTERO", "REAL"):
         fin = posicion + len(lexema)
@@ -133,7 +142,8 @@ def analizar(texto):
     posicion. Cuando hay un error lexico se informa una sola vez, se salta el
     fragmento problematico y el analisis continua con lo que sigue:
 
-    - atomo o cadena sin cierre: se salta hasta el final de la linea;
+    - atomo o cadena sin cierre (incluido "a""b, con comilla doble escapada y sin
+      cierre): se salta hasta el final de la linea;
     - comentario de bloque sin cierre: se salta hasta el final del archivo;
     - numero mal formado: se salta el fragmento numerico completo;
     - caracter no admitido: se salta solo ese caracter.

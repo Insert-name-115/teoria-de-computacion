@@ -1,3 +1,4 @@
+% Corpus invalido: varios errores lexicos recuperables y un comentario sin cierre al final
 padre(juan, ana).
 edad(ana, 123abc).
 nombre(X) :- X = 'Juan Perez.

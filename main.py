@@ -1,4 +1,5 @@
 import argparse
+import sys
 from pathlib import Path
 
 from AFDS import AFDS, afd_integrado, dibujar_afd
@@ -68,7 +69,23 @@ def crear_parser():
     return parser
 
 
+def _salida_tolerante():
+    """Evita UnicodeEncodeError en consolas que no admiten todo Unicode (p. ej. cp1252).
+
+    Un caracter que la consola no puede mostrar se reemplaza por ``?`` en vez de
+    abortar el programa. No hace nada si la salida no se puede reconfigurar.
+    """
+    for flujo in (sys.stdout, sys.stderr):
+        reconfigurar = getattr(flujo, "reconfigure", None)
+        if reconfigurar is not None:
+            try:
+                reconfigurar(errors="replace")
+            except (ValueError, OSError):
+                pass
+
+
 def main(argumentos=None):
+    _salida_tolerante()
     parser = crear_parser()
     opciones = parser.parse_args(argumentos)
     hizo_algo = False
@@ -83,8 +100,10 @@ def main(argumentos=None):
         hizo_algo = True
 
     if opciones.determinizar:
-        (CARPETA_PROYECTO / "automatas").mkdir(exist_ok=True)
-        ejecutar_determinizacion()
+        determinizacion = ejecutar_determinizacion()
+        if not determinizacion.coincide_con_integrado:
+            print("El AFD minimo no coincide con el AFD integrado")
+            return 1
         hizo_algo = True
 
     if opciones.archivo:
